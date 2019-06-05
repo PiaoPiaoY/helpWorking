@@ -15,15 +15,18 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setTitle("Rest time");
+        primaryStage.setScene(new Scene(root));
 
         RestTask restTask = new RestTask(primaryStage);
-
+        threads.submit(restTask);
         primaryStage.setOnCloseRequest(Event->{
             if(System.currentTimeMillis() > RestTask.time + 300000){
                 primaryStage.close();
                 threads.submit(restTask);
+            }else {
+                System.out.println("please have a rest!");
+                Event.consume();
             }
         });
 

@@ -2,15 +2,19 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="812.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="812.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Label alignment="CENTER" layoutX="205.0" layoutY="255.0" prefHeight="68.0" prefWidth="403.0" text="你已经工作45分钟，请休息一下">
+      <Label alignment="CENTER" layoutX="205.0" layoutY="418.0" prefHeight="68.0" prefWidth="403.0" text="您已工作45分钟，请休息一下">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
+      <Circle fx:id="clock" fill="WHITE" layoutX="407.0" layoutY="226.0" radius="172.0" stroke="BLACK" strokeType="INSIDE" />
+      <Line fx:id="timeLine" endX="10.0" endY="-168.0" layoutX="397.0" layoutY="239.0" startX="10.0" startY="-13.0" stroke="#f80000" strokeLineJoin="BEVEL" />
+      <Line endX="-11.0" endY="25.0" layoutX="418.0" layoutY="39.0" startX="-11.0" startY="15.0" />
    </children>
 </Pane>
